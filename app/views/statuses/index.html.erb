@@ -1,0 +1,65 @@
+<h1>Listing statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Asset</th>
+      <th>Age</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <%x=0%>    
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.name %></td>
+        <td><%= status.Asset %></td>
+        <td><%= Integer(status.Age)+x %></td>
+        <% x=Integer(status.Age)+x %>
+        <td><%= status.Description %></td>
+        <td><%= link_to 'Show', status %></td>
+        <td><%= link_to 'Edit', edit_status_path(status) %></td>
+        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<h1><%=x/5%><h1>
+
+<%x=2%>
+
+
+
+
+
+
+
+
+<% array=[1,2,3,4,5] %>
+<% for i in array do %>
+  <h1><%=x+rand%></h1>
+
+<% end %>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+<%= link_to 'New Status', new_status_path %>

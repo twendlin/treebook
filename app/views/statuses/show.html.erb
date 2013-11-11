@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @status.name %>
+
+</p>
+
+<p>
+  <strong>Asset:</strong>
+  <%= @status.Asset %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @status.Age %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @status.Description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', statuses_path %>
+
+
+
+
