@@ -10,7 +10,7 @@ gem 'devise'
 gem 'simple_form'
 
 group :development, :test do
-	gem 'sqlite3', '1.3.7'
+	gem 'sqlite3'
 end
 
 
