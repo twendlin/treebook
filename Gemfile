@@ -9,7 +9,7 @@ gem 'rails', '4.0.0.rc2'
 gem 'devise'
 gem 'simple_form'
 
-group :production, :staging do
+group :production do
   gem 'pg'
 end
 
