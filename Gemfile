@@ -15,7 +15,11 @@ gem 'devise'
 gem 'simple_form'
 
 group :production do
-  gem "pg"
+  gem 'pg' # dont want sqlite in production
+  gem 'unicorn' # make sure you follow installation instructions for this gem
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
 end
 
 
