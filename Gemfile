@@ -8,7 +8,7 @@ gem 'rails', '4.0.0.rc2'
 
 ruby '1.9.3'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 
 gem 'devise'
