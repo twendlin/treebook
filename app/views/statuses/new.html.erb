@@ -1,5 +1,75 @@
-<h1>New status</h1>
+
+<div class="container">
+
+<h3>Post new obit</h3>
 
 <%= render 'form' %>
 
+
+<%= image_tag("flowers.JPG", :alt=>"Sample App", :class => "round", height: '200', width: '300') %>
+
+
 <%= link_to 'Back', statuses_path %>
+
+<h4>Asset taxonomy</h4>
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li><a href="#home" data-toggle="tab">Water</a></li>
+  <li><a href="#profile" data-toggle="tab">Wastewater</a></li>
+  <li><a href="#messages" data-toggle="tab">Power Generation</a></li>
+  <li><a href="#settings" data-toggle="tab">Oil & Gas (Upstream)</a></li>
+
+<li><a href="#settings1" data-toggle="tab">Oil & Gas (Downstream)</a></li>
+
+<li><a href="#settings2" data-toggle="tab">Chemical</a></li>
+
+
+
+
+</ul>
+
+
+
+
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="home">
+  	<p> Wedo thhat...</p>
+
+  </div>
+  
+  <div class="tab-pane fade" id="profile">
+		<p> Wedo therg...</p>
+  </div>
+  
+  <div class="tab-pane fade" id="messages">
+		<p> Wedo this...</p>
+  </div>
+  
+  <div class="tab-pane fade" id="settings">
+<p> WMore Content?</p>
+
+  </div>
+
+<div class="tab-pane fade" id="settings1">
+<p> This is still more html content?</p>
+
+  </div>
+
+
+<div class="tab-pane fade" id="settings2">
+<p> This is still more chemical content?</p>
+
+  </div>
+
+
+</div>
+
+
+
+
+</div>

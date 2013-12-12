@@ -68,4 +68,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 
+gem 'acts_as_xlsx'
 

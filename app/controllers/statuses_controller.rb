@@ -3,8 +3,64 @@ class StatusesController < ApplicationController
 
   # GET /statuses
   # GET /statuses.json
+  
+
+
+
   def index
     @statuses = Status.all
+
+
+
+respond_to do | format |  
+  format.html # index.html.erb
+  format.json { render :json => @statuses }
+  format.xlsx {
+    xlsx_package = Status.to_xlsx :name => "Statuses", :header_style => {:bg_color => "00", 
+                                                                                :fg_color => "FF",  
+                                                                                :sz => 16, 
+                                                                                :alignment => { :horizontal => :center }},
+                                                                                :style => {:border => Axlsx::STYLE_THIN_BORDER}
+
+        timestamp = xlsx_package.workbook.styles.add_style :format_code => "MM-DD-YYYY", 
+        :border => Axlsx::STYLE_THIN_BORDER
+        
+        xlsx_package.workbook.worksheets.first.col_style 5, timestamp, :row_offset => 1
+        xlsx_package.workbook.worksheets.first.col_style 6, timestamp, :row_offset => 1
+    
+
+
+
+
+
+    begin 
+      temp = Tempfile.new("AssetMortality.xlsx") 
+      xlsx_package.serialize temp.path
+      send_data xlsx_package.to_stream.read, :filename => 'AssetMortality.xlsx', :type=> "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ensure
+      temp.close 
+      temp.unlink
+    end
+
+
+
+
+
+ }   
+
+
+
+
+
+
+  end
+
+
+
+
+
+
+
   end
 
   # GET /statuses/1

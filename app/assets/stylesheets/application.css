@@ -12,6 +12,44 @@
  *= require_tree .
  */
 
+
+
+
 body {
-	padding-top: 40px;
+	padding-top: 70px;
 }
+
+
+
+
+
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 40%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: automatic !important;
+}
+
+
+
+
+textarea {
+  height: 100px;
+}
+
+
+
+.jumbotron {
+ 
+ background-image: url(sky.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+
+ background-color: #EEE;
+ background-size: as defined in individual examples;
+ }

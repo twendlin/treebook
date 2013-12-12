@@ -1,15 +1,52 @@
-<div class="page-header">
-<h2>All of the statuses</h2>
+
+<div class="container">
+
+
+
+
+<div class="jumbotron">
+  <h1>Create our taxonomy!</h1>
+  <p>Help us build the world's largest and most refined classification system for your assets.</p>
+  <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+
+
+
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-header">
+<h3>All obits</h3>
+</div>
+
+
+
+
+
 <table class="table table-condensed table-hover">
+  
   <thead>
     <tr>
+   
       <th>Name</th>
       <th>Asset</th>
       <th>Age</th>
       <th>Description</th>
+      <th>Posted</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,52 +55,38 @@
   <tbody>
 
       <%x=0%>    
-    <% @statuses.each do |status| %>
+    <% @statuses.reverse.each do |status| %>
       <tr>
         <td><%= status.name %></td>
         <td><%= status.Asset %></td>
-        <%= status.Age = 2%>
-        <td><%= Integer(status.Age)+x %></td>
-        <% x=Integer(status.Age)+x %>
+       
+        <td><%= status.Age %></td>
+       
         <td><%= status.Description %></td>
-        <td><%= link_to 'Show', status %></td>
-        <td><%= link_to 'Edit', edit_status_path(status) %></td>
-        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to time_ago_in_words(status.created_at)+" ago", status %></td>
+       
 
 
       </tr>
     <% end %>
 
   </tbody>
+</div>
 </table>
-
-<h1><%=x/5%><h1>
-
-<%x=2%>
-
-
-
-
-
-
-
-
-<% array=[1,2,3,4,5] %>
-<% for i in array do %>
-  <h1><%=x+rand%></h1>
-
-<% end %>
-
-
-
-
-
 
 
 
 <br>
 
 
+<%= link_to 'Download', url_for(:format=>"xlsx") %>
+
+<%= link_to 'New obit', new_status_path %>
 
 
-<%= link_to 'New Status', new_status_path %>
+
+
+<div class="Footer">copyright &copy; 2014 The Asset Mortality Project</div>
+
+
+</div>
